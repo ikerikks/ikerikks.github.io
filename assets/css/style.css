@@ -3,22 +3,12 @@
 \*-----------------------------------*/
 
 :root {
-  /**
-   * COLOR
-   */
   --primary: #B5A1E5;
   --background: #131214;
   --outline: #3E3D40;
-  --aqi-1: #89E589;
-  --aqi-2: #E5DD89;
-  --aqi-3: #E5C089;
-  --aqi-4: #E58989;
-  --on-aqi-4: #331F1F;
-  --aqi-5: #E589B7;
   --white: #ffffff;
   --white-alpha-4: #ffffff0a;
   --white-alpha-8: #ffffff14;
-  --black-alpha-10: #0000001a;
 }
 
 /*-----------------------------------*\
@@ -352,7 +342,7 @@ hr {
 
 .air-index p {
   background-color: #E589B7;
-  color: var(--on-aqi-4);
+  color: var(--background);
   border-radius: 25px;
   padding: 5px 15px;
   font-size: 1rem;
