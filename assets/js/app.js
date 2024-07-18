@@ -101,6 +101,11 @@ searchField.addEventListener('input', () => {
             }
             searchResult.style.display = 'none';
           });
+      } else {
+        if (desktop.matches) {
+          searchWrapper.style.borderRadius = '35px';
+        }
+        searchResult.style.display = 'none';
       }
     }
     else {
