@@ -1,9 +1,3 @@
-/**
- * @license MIT
- * @copyright codewithsadee 2023 All rights reserved
- * @author codewithsadee <mohammadsadee24@gmail.com>
- */
-
 import * as page from './page.js';
 import {getCookie} from './data_function.js';
 
@@ -71,41 +65,44 @@ searchField.addEventListener('input', () => {
 
     if (searchField.value) {
       progressIcon.display = 'none';
-      fetch(url)
-        .then((data) => data.json())
-        .then((jsonData) => {
-          page.removeNodes(resultListNodes);
-          if (jsonData.length != 0) {
-            jsonData.forEach((city, index) => {
-              const resultItem =
-                `<li class="result-item" id="${index}">
-                <span class="material-symbols-rounded">location_on</span>
-                <div class="result-item-text">
-                  <p class="title">${city.name}</p>
-                  <p class="subtitle">${city.state}, ${city.country}</p>
-                </div>
-              </li>`;
-              resultList.insertAdjacentHTML("beforeend", resultItem);
-            })
-            if (desktop.matches) {
-              searchWrapper.style.borderRadius = '35px 35px 0px 0px';
+      if (searchField.value.length >= 3) {
+        console.log('ok')
+        fetch(url)
+          .then((data) => data.json())
+          .then((jsonData) => {
+            page.removeNodes(resultListNodes);
+            if (jsonData.length != 0) {
+              jsonData.forEach((city, index) => {
+                const resultItem =
+                  `<li class="result-item" id="${index}">
+                  <span class="material-symbols-rounded">location_on</span>
+                  <div class="result-item-text">
+                    <p class="title">${city.name}</p>
+                    <p class="subtitle">${city.state}, ${city.country}</p>
+                  </div>
+                </li>`;
+                resultList.insertAdjacentHTML("beforeend", resultItem);
+              })
+              if (desktop.matches) {
+                searchWrapper.style.borderRadius = '35px 35px 0px 0px';
+              }
+              searchResult.style.display = 'block';
             }
-            searchResult.style.display = 'block';
-          }
-          else {
+            else {
+              if (desktop.matches) {
+                searchWrapper.style.borderRadius = '35px';
+              }
+              searchResult.style.display = 'none';
+            }
+          })
+          .catch((error) => {
+            console.log(error);
             if (desktop.matches) {
               searchWrapper.style.borderRadius = '35px';
             }
             searchResult.style.display = 'none';
-          }
-        })
-        .catch((error) => {
-          console.log(error);
-          if (desktop.matches) {
-            searchWrapper.style.borderRadius = '35px';
-          }
-          searchResult.style.display = 'none';
-        });
+          });
+      }
     }
     else {
       if (desktop.matches) {
