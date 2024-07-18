@@ -11,4 +11,4 @@ Don't hesitate to share your opinion, advices, or problems that you encounter us
 
 ## Authors
 
-- [@ikerikks](https://www.github.com/ikerikks) - [email](ikerikks@gmail.com)
+- [@ikerikks](https://www.github.com/ikerikks) - [capitalclub97@gmail.com]
