@@ -66,7 +66,6 @@ searchField.addEventListener('input', () => {
     if (searchField.value) {
       progressIcon.display = 'none';
       if (searchField.value.length >= 3) {
-        console.log('ok')
         fetch(url)
           .then((data) => data.json())
           .then((jsonData) => {
