@@ -1,6 +1,3 @@
-
-<div align="left">
-
 # Weather app 🌤️
 
 
@@ -18,5 +15,3 @@ Don't hesitate to share your opinion, advices, or problems that you encounter us
 ### Authors
 
 [![github](https://img.shields.io/badge/ikerikks-100000?style=flat&logo=github&logoColor=white)](https://www.github.com/ikerikks) [![Gmail](https://img.shields.io/badge/capitalclub97@gmail.com-D14836?style=flat&logo=gmail&logoColor=white)](mailto:capitalclub97@gmail.com)
-
-</div>
