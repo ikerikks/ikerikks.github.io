@@ -60,7 +60,9 @@ searchField.addEventListener('input', () => {
   clearTimeout(debounceTimeout);
   debounceTimeout = setTimeout(() => {
     const resultListNodes = [...resultList.children];
-    const url = `https://api.openweathermap.org/geo/1.0/direct?lang=en&q=${searchField.value}&limit=5&appid=770537c6114a67fd86fe81d5c28f8305`;
+    const url = 'https://api.openweathermap.org/geo' +
+      '/1.0/direct?lang=en&q=' + searchField.value +
+      '&limit=5&appid=770537c6114a67fd86fe81d5c28f8305';
     const desktop = window.matchMedia("(min-width: 1200px)");
 
     if (searchField.value) {
@@ -121,7 +123,9 @@ searchField.addEventListener('input', () => {
 
 //button and list result management------------------------
 resultList.addEventListener('click', (e) => {
-  const url = `https://api.openweathermap.org/geo/1.0/direct?lang=en&q=${searchField.value}&limit=5&appid=770537c6114a67fd86fe81d5c28f8305`;
+  const url = 'https://api.openweathermap.org/geo/' +
+    '1.0/direct?lang=en&q=' + searchField.value +
+    '&limit=5&appid=770537c6114a67fd86fe81d5c28f8305';
   let li = e.target.closest('li');
  
   if (activeLocation) {
@@ -188,7 +192,9 @@ const locationHandler = () => {
     const lon = info.longitude;
 
     try {
-      const url = `http://api.openweathermap.org/geo/1.0/reverse?lat=${lat}&lon=${lon}&limit=1&appid=770537c6114a67fd86fe81d5c28f8305`;
+      const url = 'https://api.openweathermap.org/geo/' +
+        '1.0/reverse?lat=' + lat + '&' + 'lon=' + lon + '&' +
+        'limit=1&appid=770537c6114a67fd86fe81d5c28f8305';
       const response = await fetch(url);
       const json = await response.json();
       const cityName = json[0].name;

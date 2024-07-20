@@ -23,7 +23,9 @@ export async function updateMainCard(lat, lon, cityName) {
   ];
   
   try {
-    const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=770537c6114a67fd86fe81d5c28f8305`;
+    const url = 'https://api.openweathermap.org/' +
+      'data/2.5/weather?lat=' + lat + '&lon=' + lon + 
+      '&units=metric&appid=770537c6114a67fd86fe81d5c28f8305';
     const response = await fetch(url);
     const json = await response.json();
 
@@ -54,7 +56,9 @@ export async function updateMainCard(lat, lon, cityName) {
 
 export async function updateDayForecast(lat, lon) {
   try {
-    const url = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&units=metric&appid=770537c6114a67fd86fe81d5c28f8305`;
+    const url = 'https://api.openweathermap.org/data/' +
+      '2.5/forecast?lat=' + lat + '&lon=' + lon +
+      '&units=metric&appid=770537c6114a67fd86fe81d5c28f8305';
     const response = await fetch(url);
     const json = await response.json();
     let daysTemp = dataFunc.getDayTemperature(json);
@@ -120,7 +124,9 @@ export async function updateHighlights(lat, lon) {
     }
   };
   try {
-    const currentUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=770537c6114a67fd86fe81d5c28f8305`;
+    const currentUrl = 'https://api.openweathermap.org/data/2.5/' +
+      'weather?lat=' + lat + '&lon=' + lon + '&units=metric&' +
+      'appid=770537c6114a67fd86fe81d5c28f8305';
     const airUrl = `http://api.openweathermap.org/data/2.5/air_pollution?lat=${lat}&lon=${lon}&appid=770537c6114a67fd86fe81d5c28f8305`;
     const currResponse = await fetch(currentUrl);
     const currJSON = await currResponse.json();
@@ -170,7 +176,9 @@ export async function updateHighlights(lat, lon) {
 
 export async function updateHourForecast(lat, lon) {
   try {
-    const url = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&units=metric&appid=770537c6114a67fd86fe81d5c28f8305`;
+    const url = 'https://api.openweathermap.org/data/2.5/' +
+      'forecast?lat=' + lat + '&lon=' + lon +
+      '&units=metric&appid=770537c6114a67fd86fe81d5c28f8305';
     const hourList = document.querySelector('.hour-list');
     const hourListNodes = [...hourList.children];
     const response = await fetch(url);
