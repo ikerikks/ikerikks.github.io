@@ -28,8 +28,8 @@ const allSquares = document.querySelectorAll(".square");
 function addGo(e) {
   const goDisplay = document.createElement("div");
   e.target.appendChild(goDisplay);
-  go = (go === "circle") ? "cross": "circle";
   goDisplay.classList.add(go);
+  go = (go === "circle") ? "cross": "circle";
   infoDisplay.textContent = "it is " + go + " 's turn";
   e.target.removeEventListener("click", addGo);
   checkScore();
