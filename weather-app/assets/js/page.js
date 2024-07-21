@@ -127,7 +127,9 @@ export async function updateHighlights(lat, lon) {
     const currentUrl = 'https://api.openweathermap.org/data/2.5/' +
       'weather?lat=' + lat + '&lon=' + lon + '&units=metric&' +
       'appid=770537c6114a67fd86fe81d5c28f8305';
-    const airUrl = `http://api.openweathermap.org/data/2.5/air_pollution?lat=${lat}&lon=${lon}&appid=770537c6114a67fd86fe81d5c28f8305`;
+    const airUrl = 'https://api.openweathermap.org/data/2.5/' +
+      'air_pollution?lat=' + lat + '&lon=' + lon +
+      '&appid=770537c6114a67fd86fe81d5c28f8305';
     const currResponse = await fetch(currentUrl);
     const currJSON = await currResponse.json();
 
