@@ -517,7 +517,7 @@ hr {
 }
 
 .animate-on-load {
-  animation: bubble 2s ease;
+  animation: bubble 3.5s ease;
 }
 
 /**loading animations**/
