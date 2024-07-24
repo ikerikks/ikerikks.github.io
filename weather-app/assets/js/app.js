@@ -142,7 +142,7 @@ resultList.addEventListener('click', (e) => {
         page.updateDayForecast(city.lat, city.lon);
         page.updateHighlights(city.lat, city.lon);
         page.updateHourForecast(city.lat, city.lon);
-      }, 320);
+      }, 450);
       document.cookie = 'lat=' + city.lat;
       document.cookie = 'lon=' + city.lon;
       document.cookie = 'name=' +  city.name;
@@ -203,7 +203,7 @@ const locationHandler = () => {
         page.updateDayForecast(lat, lon);
         page.updateHighlights(lat, lon);
         page.updateHourForecast(lat, lon);
-      }, 320);
+      }, 450);
       document.cookie = 'lat=' + lat;
       document.cookie = 'lon=' + lon;
       document.cookie = 'name=' + cityName;
